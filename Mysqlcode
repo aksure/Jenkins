@@ -1,0 +1,145 @@
+
+--------------SCENARIO 1-----------------------------
+-----------------------------------------------------
+--1) SIMPLE INSERT STATEMENT
+--Test table created:
+
+
+DROP TABLE IF EXISTS  dbo.testdata1;
+
+CREATE TABLE dbo.testdata1 (
+    _acdaid nvarchar(200) not null,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+
+delete from dbo.testdata1;
+--Test data created:
+insert into dbo.testdata1 values ('A','LastName1','FirstName1','ADDRESS1','OTTAWA');
+
+select * from dbo.testdata1;
+
+
+--------------SCENARIO 2-----------------------------
+-----------------------------------------------------
+--2) SIMPLE UPDATE STATEMENT
+--Test table created:
+
+DROP TABLE IF EXISTS  dbo.testdata2;
+
+CREATE TABLE dbo.testdata2 (
+    _acdaid nvarchar(200) not null,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+delete from dbo.testdata2;
+
+insert into dbo.testdata2 values ('B','LastName2','FirstName','ADDRESS2','OTTAWA');
+
+update dbo.testdata2 set FirstName='FirstName2';
+
+
+select * from dbo.testdata2;
+
+
+--------------SCENARIO 3-----------------------------
+-----------------------------------------------------
+--3) DROP AN EXISTING COLUMN
+--Test table created:
+
+DROP TABLE IF EXISTS  dbo.testdata3;
+
+CREATE TABLE dbo.testdata3 (
+    _acdaid nvarchar(200) not null,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+delete from dbo.testdata3;
+
+insert into dbo.testdata3 values ('C','LastName3','FirstName3','ADDRESS3','OTTAWA');
+
+ALTER TABLE dbo.testdata3 DROP COLUMN LastName,City;
+
+select * from dbo.testdata3;
+
+
+
+--------------SCENARIO 4-----------------------------
+-----------------------------------------------------
+--4) DELETE A TABLE
+--Test table created:
+
+DROP TABLE IF EXISTS  dbo.testdata4;
+
+CREATE TABLE dbo.testdata4 (
+    _acdaid nvarchar(200) not null,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+delete from dbo.testdata4;
+
+insert into dbo.testdata4 values ('D','LastName4','FirstName4','ADDRESS4','OTTAWA');
+
+delete from dbo.testdata4;
+
+select * from dbo.testdata4;
+
+
+--------------SCENARIO 5-----------------------------
+-----------------------------------------------------
+--5) DROP A TABLE
+--Test table created:
+
+DROP TABLE IF EXISTS  dbo.testdata5;
+
+CREATE TABLE dbo.testdata5 (
+    _acdaid nvarchar(200) not null,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+delete from dbo.testdata5;
+
+insert into dbo.testdata5 values ('D','LastName5','FirstName5','ADDRESS5','OTTAWA');
+
+drop table dbo.testdata5;
+
+
+--------------SCENARIO 6-----------------------------
+-----------------------------------------------------
+--6)  ADD A NEW COLUMN
+--Test table created:
+
+DROP TABLE IF EXISTS  dbo.testdata6;
+
+CREATE TABLE dbo.testdata6 (
+    _acdaid nvarchar(200) not null,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+delete from dbo.testdata6;
+
+insert into dbo.testdata6 values ('E','LastName6','FirstName6','ADDRESS6','OTTAWA');
+
+ALTER TABLE dbo.testdata6 ADD Email varchar(255);
+
+insert into dbo.testdata6 values ('ENew','LastName_New','FirstName_New','ADDRESS_New','OTTAWA','email@gmail.com');
+
+select * from dbo.testdata6;
+
+
+
+
+
+
